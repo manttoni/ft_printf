@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:15:07 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/11 20:51:22 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/11 21:10:55 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ int	ft_printf(const char *format, ...)
 
 int main(void)
 {
-	unsigned int i = 10;
-	ft_printf("%x", i);
+	for(unsigned int i = 0; i < 100; ++i)
+		ft_printf("%x\n", i);
 }
