@@ -6,18 +6,18 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:15:07 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/11 19:15:43 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/11 20:51:22 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	print_variable(va_list args, char conchr)
 {
 	if (conchr == 'c')
-		return ((char)ft_putchar(va_arg(args, int)));
+		return (ft_putchar(va_arg(args, int)));
 	if (conchr == 's')
-		return (ft_putstr(va_arg(args, char *)));
+		return (ft_putstr(va_arg(args, char *)));/*
 	if (conchr == 'p')
 		return (ft_putptr(va_arg(args, void *)));
 	if (conchr == 'd')
@@ -25,11 +25,11 @@ int	print_variable(va_list args, char conchr)
 	if (conchr == 'i')
 		return (ft_putint(va_arg(args, int)));
 	if (conchr == 'u')
-		return (ft_putuint(va_arg(args, unsigned int)));
+		return (ft_putuint(va_arg(args, unsigned int)));*/
 	if (conchr == 'x')
-		return (ft_puthex(va_arg(args, unsigned int)));
+		return (ft_puthex(va_arg(args, unsigned int)));/*
 	if (conchr == 'X')
-		return (ft_puthex_caps(va_arg(args, unsigned int)));
+		return (ft_puthex_caps(va_arg(args, unsigned int)));*/
 	return (-1);
 }
 
@@ -64,6 +64,6 @@ int	ft_printf(const char *format, ...)
 
 int main(void)
 {
-	char c = 'c';
-	ft_printf("%c", c);
+	unsigned int i = 10;
+	ft_printf("%x", i);
 }

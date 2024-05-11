@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/11 19:16:02 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/11 19:42:54 by amaula           ###   ########.fr       */
+/*   Created: 2024/05/11 20:33:31 by amaula            #+#    #+#             */
+/*   Updated: 2024/05/11 20:50:40 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_puthex(unsigned int h)
 {
-	int	ret;
-	int	tmp;
+	char	digit;
+	int 	ret;
+	int 	tmp;
 
 	ret = 0;
-	while (*s)
+	if (h >= 16)
 	{
-		tmp = ft_putchar(*s);
+		tmp = ft_puthex(h / 16);
 		if (tmp < 0)
 			return (-1);
 		ret += tmp;
-		s++;
 	}
-	return (ret);
+	digit = h % 16 + '0';
+	if (digit > '9')
+		digit += 39;
+	tmp = ft_putchar(digit);
+	if (tmp < 0)
+		return (-1);
+	return (ret + tmp);
 }
