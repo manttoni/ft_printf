@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 19:00:37 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/11 19:25:10 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/12 13:47:53 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 
 int	ft_putchar(char c)
 {
-	return (write(1, &c, 1));
+	int	ret;
+
+	ret = write(1, &c, 1);
+	if (ret < 0)
+		return (-1);
+	return ret;
 }

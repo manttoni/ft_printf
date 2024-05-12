@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:15:07 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/12 13:36:06 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/12 13:49:09 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	ft_printf(const char *format, ...)
 	int		tmp;
 	int		ret;
 
+	ret = 0;
 	va_start(args, format);
 	while (*format)
 	{
@@ -55,7 +56,7 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 		{
-			tmp += write(1, format, 1);
+			tmp = write(1, format, 1);
 			if (tmp < 0)
 				return (-1);
 			ret += tmp;
@@ -70,27 +71,40 @@ int	ft_printf(const char *format, ...)
 
 int main(void)
 {
-	char c = 'c';
-	char *s = "kissa";
-	int i = 100;
-	printf("Printing just a string:\n");
-	printf("asd\n");
-	ft_printf("asd\n");
+    char c = 'c';
+    char *s = "kissa";
+    int i = 100;
 
-	printf("\nPrinting a char:\n");
-	printf("%c\n", c);
-	ft_printf("%c\n", c);
+    printf("Printing just a string:\n");
+    if (printf("asd\n") == ft_printf("asd\n"))
+        printf("Correct return\n");
+    else
+        printf("Wrong return!\n");
 
-	printf("\nPrinting a string:\n");
-	printf("%s\n", s);
-	ft_printf("%s\n", s);
+    printf("\nPrinting a char:\n");
+    if (printf("%c\n", c) == ft_printf("%c\n", c))
+        printf("Correct return\n");
+    else
+        printf("Wrong return!\n");
 
-	printf("\nPrinting a pointer:\n");
-	printf("%p\n", &c);
-	ft_printf("%p\n", &c);
+    printf("\nPrinting a string:\n");
+    if (printf("%s\n", s) == ft_printf("%s\n", s))
+        printf("Correct return\n");
+    else
+        printf("Wrong return!\n");
 
-	printf("\nPrinting %i in hexadecimal:\n", i);
-	printf("%x\n", i);
-	ft_printf("%x\n", i);
-	return 0;
+    printf("\nPrinting a pointer:\n");
+    if (printf("%p\n", &c) == ft_printf("%p\n", &c))
+        printf("Correct return\n");
+    else
+        printf("Wrong return!\n");
+
+    printf("\nPrinting %i in hexadecimal:\n", i);
+    if (printf("%x\n", i) == ft_printf("%x\n", i))
+        printf("Correct return\n");
+    else
+        printf("Wrong return!\n");
+
+    return 0;
 }
+
