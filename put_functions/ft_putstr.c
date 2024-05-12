@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 19:16:02 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/11 19:42:54 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/12 16:43:48 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@ int	ft_putstr(char *s)
 	int	ret;
 	int	tmp;
 
+	if (!s)
+	{
+		tmp = ft_putstr("(null)");
+		if (tmp < 0)
+			return (-1);
+		return tmp;
+	}
 	ret = 0;
 	while (*s)
 	{
