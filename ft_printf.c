@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:15:07 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/12 13:49:09 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/12 14:33:09 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ int	print_variable(va_list args, char specifier)
 	if (specifier == 's')
 		return (ft_putstr(va_arg(args, char *)));
 	if (specifier == 'p')
-		return (ft_putptr(va_arg(args, void *)));/*
+		return (ft_putptr(va_arg(args, void *)));
 	if (specifier == 'd')
-		return (ft_putdec(va_arg(args, int)));
+		return (ft_putdec(va_arg(args, int)));/*
 	if (specifier == 'i')
 		return (ft_putint(va_arg(args, int)));
 	if (specifier == 'u')
 		return (ft_putuint(va_arg(args, unsigned int)));*/
 	if (specifier == 'x')
-		return (ft_puthex(va_arg(args, unsigned int)));/*
+		return (ft_puthex(va_arg(args, unsigned long)));/*
 	if (specifier == 'X')
 		return (ft_puthex_caps(va_arg(args, unsigned int)));*/
 	return (-1);
@@ -105,6 +105,11 @@ int main(void)
     else
         printf("Wrong return!\n");
 
+    printf("\nPrinting %i in decimal:\n", i);
+    if (printf("%d\n", i) == ft_printf("%d\n", i))
+        printf("Correct return\n");
+    else
+        printf("Wrong return!\n");
     return 0;
 }
 
