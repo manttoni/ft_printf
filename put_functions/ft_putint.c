@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putint.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/11 19:26:00 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/12 15:58:31 by amaula           ###   ########.fr       */
+/*   Created: 2024/05/12 15:05:25 by amaula            #+#    #+#             */
+/*   Updated: 2024/05/12 15:58:01 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../ft_printf.h"
 
-#include <stdarg.h>
-#include <unistd.h>
+int	ft_putint(int i)
+{
+	int		ret;
+	int		tmp;
+	long	li;
 
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putptr(void *p);
-int	ft_putdec(int d);
-int	ft_putint(int i);
-int	ft_putuint(unsigned int i);
-int	ft_puthex(unsigned long h);
-int	ft_puthex_caps(unsigned long hc);
-
-#endif
+	ret = 0;
+	li = (long) i;
+	return 0;
+}

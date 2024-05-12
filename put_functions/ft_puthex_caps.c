@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_puthex_caps.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/11 19:26:00 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/12 15:58:31 by amaula           ###   ########.fr       */
+/*   Created: 2024/05/12 15:57:17 by amaula            #+#    #+#             */
+/*   Updated: 2024/05/12 16:00:56 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../ft_printf.h"
 
-#include <stdarg.h>
-#include <unistd.h>
+int	ft_puthex_caps(unsigned long hc)
+{
+	char	digit;
+	int 	ret;
+	int 	tmp;
 
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putptr(void *p);
-int	ft_putdec(int d);
-int	ft_putint(int i);
-int	ft_putuint(unsigned int i);
-int	ft_puthex(unsigned long h);
-int	ft_puthex_caps(unsigned long hc);
-
-#endif
+	ret = 0;
+	if (hc >= 16)
+	{
+		tmp = ft_puthex_caps(hc / 16);
+		if (tmp < 0)
+			return (-1);
+		ret += tmp;
+	}
+	digit = hc % 16;
+	if (digit >= 10)
+		digit += 'A' - 10;
+	else
+		digit += '0';
+	tmp = ft_putchar(digit);
+	if (tmp < 0)
+		return (-1);
+	return (ret + tmp);
+}

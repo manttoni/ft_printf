@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:15:07 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/12 14:33:09 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/12 16:00:17 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	print_variable(va_list args, char specifier)
 	if (specifier == 'u')
 		return (ft_putuint(va_arg(args, unsigned int)));*/
 	if (specifier == 'x')
-		return (ft_puthex(va_arg(args, unsigned long)));/*
+		return (ft_puthex(va_arg(args, unsigned long)));
 	if (specifier == 'X')
-		return (ft_puthex_caps(va_arg(args, unsigned int)));*/
+		return (ft_puthex_caps(va_arg(args, unsigned long)));
 	return (-1);
 }
 
@@ -73,7 +73,7 @@ int main(void)
 {
     char c = 'c';
     char *s = "kissa";
-    int i = 100;
+    int i = 1000;
 
     printf("Printing just a string:\n");
     if (printf("asd\n") == ft_printf("asd\n"))
@@ -107,6 +107,12 @@ int main(void)
 
     printf("\nPrinting %i in decimal:\n", i);
     if (printf("%d\n", i) == ft_printf("%d\n", i))
+        printf("Correct return\n");
+    else
+        printf("Wrong return!\n");
+
+    printf("\nPrinting %i in hex_caps:\n", i);
+    if (printf("%X\n", i) == ft_printf("%X\n", i))
         printf("Correct return\n");
     else
         printf("Wrong return!\n");
