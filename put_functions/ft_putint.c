@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 15:05:25 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/12 15:58:01 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/12 16:24:10 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 int	ft_putint(int i)
 {
-	int		ret;
-	int		tmp;
 	long	li;
 
-	ret = 0;
-	li = (long) i;
-	return 0;
+	li = (long) i^0;
+	return (ft_putdec(li));
 }
