@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:15:07 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/12 16:43:58 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/12 17:15:19 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,10 @@ int	ft_printf(const char *format, ...)
 	return (ret);
 }
 
+#include <stdio.h>
+
+int main(void)
+{
+	//printf("%u\n", 4294967294);
+	ft_printf("%u\n", -1);
+}
