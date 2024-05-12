@@ -6,13 +6,13 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 20:33:31 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/11 21:06:17 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/12 13:15:28 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_puthex(unsigned int h)
+int	ft_puthex(unsigned long h)
 {
 	char	digit;
 	int 	ret;

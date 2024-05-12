@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:15:07 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/11 21:10:55 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/12 13:01:58 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	print_variable(va_list args, char conchr)
 	if (conchr == 'c')
 		return (ft_putchar(va_arg(args, int)));
 	if (conchr == 's')
-		return (ft_putstr(va_arg(args, char *)));/*
+		return (ft_putstr(va_arg(args, char *)));
 	if (conchr == 'p')
-		return (ft_putptr(va_arg(args, void *)));
+		return (ft_putptr(va_arg(args, void *)));/*
 	if (conchr == 'd')
 		return (ft_putdec(va_arg(args, int)));
 	if (conchr == 'i')
@@ -62,8 +62,11 @@ int	ft_printf(const char *format, ...)
 	return (len);
 }
 
+#include <stdio.h>
 int main(void)
 {
-	for(unsigned int i = 0; i < 100; ++i)
-		ft_printf("%x\n", i);
+	int i = 15;
+	void *p = &i;
+	ft_printf("%p\n", p);
+	printf("%p\n", p);
 }
