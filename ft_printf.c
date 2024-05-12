@@ -6,29 +6,29 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:15:07 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/12 13:01:58 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/12 13:24:22 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_variable(va_list args, char conchr)
+int	print_variable(va_list args, char specifier)
 {
-	if (conchr == 'c')
+	if (specifier == 'c')
 		return (ft_putchar(va_arg(args, int)));
-	if (conchr == 's')
+	if (specifier == 's')
 		return (ft_putstr(va_arg(args, char *)));
-	if (conchr == 'p')
+	if (specifier == 'p')
 		return (ft_putptr(va_arg(args, void *)));/*
-	if (conchr == 'd')
+	if (specifier == 'd')
 		return (ft_putdec(va_arg(args, int)));
-	if (conchr == 'i')
+	if (specifier == 'i')
 		return (ft_putint(va_arg(args, int)));
-	if (conchr == 'u')
+	if (specifier == 'u')
 		return (ft_putuint(va_arg(args, unsigned int)));*/
-	if (conchr == 'x')
+	if (specifier == 'x')
 		return (ft_puthex(va_arg(args, unsigned int)));/*
-	if (conchr == 'X')
+	if (specifier == 'X')
 		return (ft_puthex_caps(va_arg(args, unsigned int)));*/
 	return (-1);
 }
