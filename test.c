@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 10:55:07 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/13 12:43:01 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/13 12:55:51 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,10 @@ int main(void)
 	void *p = &i;
 	test("%c\n", 'c');
 	test("%s\n", "kissa");
-	test("%p\n", LONG_MIN);
+	test("%p\n", LONG_MAX);
 	test("%d\n", i);
 	test("%i\n", 012);
 	test("%u\n", (unsigned int)INT_MAX + 1);
-	test("%x\n", LONG_MAX);
-	test("%X\n", LONG_MIN);
+	test("%x\n", LONG_MIN);
+	test("%X\n", LONG_MAX);
 }
