@@ -6,13 +6,13 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 15:57:17 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/12 16:00:56 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/13 12:35:53 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_puthex_caps(unsigned long hc)
+int	ft_puthex_caps(unsigned int hc)
 {
 	char	digit;
 	int 	ret;
