@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 19:23:01 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/12 13:15:20 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/13 13:14:23 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_putptr(void *p)
 {
 	int	ret;
-	int tmp;
+	int	tmp;
 
 	tmp = ft_putstr("0x");
 	if (tmp < 0)

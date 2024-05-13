@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 10:55:07 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/13 12:55:51 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/13 13:05:59 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ void test(char *format, ...)
 	{
 		int d = va_arg(args, int);
 		if (printf(format, d) == ft_printf(format, d))
-			printf("\nInteger success");
+			printf("\nInteger success (%c)", specifier);
 		else
-			printf("\nInteger fail");
+			printf("\nInteger fail (%c)", specifier);
 	}
 	va_end(args);
 	pl();
@@ -89,7 +89,7 @@ int main(void)
 	test("%c\n", 'c');
 	test("%s\n", "kissa");
 	test("%p\n", LONG_MAX);
-	test("%d\n", i);
+	test("%d\n", 0x123);
 	test("%i\n", 012);
 	test("%u\n", (unsigned int)INT_MAX + 1);
 	test("%x\n", LONG_MIN);

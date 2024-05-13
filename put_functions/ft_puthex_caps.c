@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 15:57:17 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/13 12:57:50 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/13 13:13:19 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_puthex_caps(unsigned long hc)
 {
 	char	digit;
-	int 	ret;
-	int 	tmp;
+	int		ret;
+	int		tmp;
 
 	ret = 0;
 	if (hc >= 16)

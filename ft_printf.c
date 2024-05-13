@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:15:07 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/13 12:46:27 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/13 13:10:53 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,14 @@ int	ft_printf(const char *format, ...)
 				tmp = write(1, "%", 1);
 			else
 				tmp = print_variable(args, *format);
-			if (tmp < 0)
-				return (-1);
-			ret += tmp;
 		}
 		else
-		{
 			tmp = write(1, format, 1);
-			if (tmp < 0)
-				return (-1);
-			ret += tmp;
-		}
+		if (tmp < 0)
+			return (-1);
+		ret += tmp;
 		format++;
 	}
 	va_end(args);
 	return (ret);
 }
-
