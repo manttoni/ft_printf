@@ -6,7 +6,7 @@
 /*   By: amaula <amaula@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 20:33:31 by amaula            #+#    #+#             */
-/*   Updated: 2024/05/13 12:54:10 by amaula           ###   ########.fr       */
+/*   Updated: 2024/05/13 13:12:57 by amaula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_puthex(unsigned long h)
 {
 	char	digit;
-	int 	ret;
-	int 	tmp;
+	int		ret;
+	int		tmp;
 
 	ret = 0;
 	if (h >= 16)
